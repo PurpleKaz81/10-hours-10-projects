@@ -5,6 +5,23 @@
 }
 
 body {
+  background-image: url(fabian-mardi-kVKz9qnJC-k-unsplash.jpg);
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   font-family: "Poppins", sans-serif;
   margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: -10rem;
+}
+
+.countdown-container {
+  display: flex;
 }
