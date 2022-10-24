@@ -12,9 +12,9 @@ let countdownDate = new Date().setMinutes(new Date().getMinutes() + 5)
 let countdownDate = new Date().setHours(new Date().getHours() + 1) */
 
 
-// let countdownDate = new Date().setSeconds(new Date().getSeconds() + 10)
+let countdownDate = new Date().setSeconds(new Date().getSeconds() + 03)
 
-let countdownDate = new Date("24 October 2022 01:39")
+// let countdownDate = new Date("1 January 2023 00:00")
 
 let timerInterval
 
