@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  background-image: url(joshua-coleman-VPTREFPC1jc-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+#timer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: normal;
+  margin-top: 5rem;
+}
+
+.countdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.big-text {
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: 1rem 2rem;
+}
+
+.countdown-el {
+  text-align: center;
+  justify-content: center;
+}
+
+.countdown-el span {
+  font-size: 3rem;
+}
+
+#content {
+  opacity: 0;
+}
+
+#content h1 {
+  font-size: 10vmax;
+  transform: scale(1.25);
+}
+
+#content.visible {
+  opacity: 1;
+  animation: colorChange 1s ease-in-out 0.5s forwards;
+}
+
+#content.visible h1 {
+  animation: scaleOut 1s ease-in-out 0.5s forwards;
+}
+
+/* @keyframes colorChange {
+  from {
+    color: #fcdf00;
+    background-color: #0d67ad;
+  }
+  to {
+    color: white;
+    background-color: black;
+  }
+} */
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: scale(1);
+  }
+}
