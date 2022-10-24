@@ -34,7 +34,7 @@ const quizData = [
     a: "No one",
     b: "Everyone",
     c: "Connor MacLeod of the clan MacLeod",
-    d: "🎶Ooooo-oooo-ooooo🎶",
+    d: "🎶 Ooooo-oooo-ooooo 🎶",
     correct: "d"
   }
 ]
@@ -58,5 +58,14 @@ function loadQuiz() {
   b_text.innerText = currentQuizData.b
   c_text.innerText = currentQuizData.c
   d_text.innerText = currentQuizData.d
-  currentQuestion++
 }
+
+submitBtn.addEventListener("click", () => {
+  currentQuiz++
+  if (currentQuiz < quizData.length) {
+    loadQuiz()
+  } else {
+    // TODO: Show results
+    alert("You done, bruh! 🍸")
+  }
+})
