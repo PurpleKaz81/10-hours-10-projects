@@ -1,33 +1,62 @@
-const daysEl = document.getElementById("days")
-const hoursEl = document.getElementById("hours")
-const minsEl = document.getElementById("mins")
-const secondsEl = document.getElementById("seconds")
+//one way to target date
+/* let countdownDate = new Date("26 October 2022 00:00")
 
-const targetDate = "25 October 2022"
+other method for setting countdownDate
+// display content 30 seconds after user has landed on page
+let countdownDate = new Date().setSeconds(new Date().setSeconds() + 30)
 
-function countdown() {
-  const newYearsDate = new Date(targetDate)
-  const currentDate = new Date()
+// same thing for five minutes
+let countdownDate = new Date().setMinutes(new Date().getMinutes() + 5)
 
-  const totalSeconds = (newYearsDate - currentDate) / 1000
+// same thing for one hour
+let countdownDate = new Date().setHours(new Date().getHours() + 1) */
 
-  const days = Math.floor(totalSeconds / 3600 / 24)
-  const hours = Math.floor(totalSeconds / 3600) % 24
-  const mins = Math.floor(totalSeconds / 60) % 60
-  const seconds = Math.floor(totalSeconds) % 60
 
-  daysEl.innerHTML = formatTime(days)
-  hoursEl.innerHTML = formatTime(hours)
-  minsEl.innerHTML = formatTime(mins)
-  secondsEl.innerHTML = formatTime(seconds)
+// let countdownDate = new Date().setSeconds(new Date().getSeconds() + 10)
 
+let countdownDate = new Date("24 October 2022 01:39")
+
+let timerInterval
+
+const daysElem = document.getElementById("days")
+const hoursElem = document.getElementById("hours")
+const minsElem = document.getElementById("mins")
+const secondsElem = document.getElementById("seconds")
+const timer = document.getElementById("timer")
+const content = document.getElementById("content")
+
+const formatTime = (time, string) => {
+  return time === 1 ? `${time} ${string}` : `${time} ${string}s`
 }
 
-function formatTime(time) {
-  return time < 10 ? (`0${time}`) : time
+const startCountdown = () => {
+  const now = new Date().getTime()
+  const countdown = new Date(countdownDate).getTime()
+
+  const difference = (countdown - now) / 1000 // divide milliseconds by 1000 to get seconds, ms automatic in ECMAScript
+
+  if (difference < 1) {
+    endCountdown()
+  }
+
+  let days = Math.floor(difference / (60 * 60 * 24))
+  let hours = Math.floor((difference % (60 * 60 * 24)) / (60 * 60))
+  let minutes = Math.floor((difference % (60 * 60)) / 60)
+  let seconds = Math.floor(difference % 60)
+
+  daysElem.innerHTML = formatTime(days, "day")
+  hoursElem.innerHTML = formatTime(hours, "hour")
+  minsElem.innerHTML = formatTime(minutes, "minute")
+  secondsElem.innerHTML = formatTime(seconds, "second")
 }
 
-// Initial Call
-countdown()
+const endCountdown = () => {
+  clearInterval(timerInterval)
+  timer.remove()
+  content.classList.add("visible")
+}
 
-setInterval(countdown, 1000)
+window.addEventListener("load", () => {
+  startCountdown()
+  timerInterval = setInterval(startCountdown, 1000)
+})
