@@ -1,5 +1,6 @@
-# 10-hours-10-projects
-Ten JS projects done in ten hours
+# Small JS Projects
+Ten JS projects done in ten hours by Florin Pop
+See https://www.youtube.com/watch?v=dtKciwk_si4
 
 Timer done with help from https://webdesign.tutsplus.com/tutorials/how-to-build-a-javascript-countdown-timer--cms-93144
 
