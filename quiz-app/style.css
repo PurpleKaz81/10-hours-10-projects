@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: #e1e1e1;
-  background-image: linear-gradient(315deg, #e1e1e1 0%, #F0F1F8 70%);
+  background-color: #e8e8e8;
+  background-image: linear-gradient(315deg, #e8e8e8 0%, #cdcedb 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,5 +17,36 @@ body {
 
 .quiz-container {
   background-color: white;
-  width: 25em
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  /* overflow: hidden; */
+  width: 600px;
+  /* max-width: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-header {
+  padding: 4rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background-color: #9b59b6;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  /* width: 100%; */
+  padding: 1.3rem;
+}
+
+button:hover {
+  background-color: #9148ad;
 }
